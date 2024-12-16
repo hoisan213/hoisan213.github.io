@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибір мови</title>
+</head>
+<body>
+
+<form id="languageForm">
+    <label>
+        <input type="radio" name="language" value="html"> HTML
+    </label><br>
+    <label>
+        <input type="radio" name="language" value="css"> CSS
+    </label><br>
+    <label>
+        <input type="radio" name="language" value="js"> JS
+    </label><br>
+    <label>
+        <input type="radio" name="language" value="php"> PHP
+    </label><br>
+</form>
+
+<p id="output">Вибрана мова: </p>
+
+<script>
+    // Отримуємо елементи форми та абзац для виведення
+    const languageForm = document.getElementById('languageForm');
+    const output = document.getElementById('output');
+
+    // Додаємо слухача подій на зміну значення у формі
+    languageForm.addEventListener('change', function () {
+        const selectedLanguage = document.querySelector('input[name="language"]:checked');
+        if (selectedLanguage) {
+            output.textContent = 'Вибрана мова: ' + selectedLanguage.value.toUpperCase();
+        }
+    });
+</script>
+
+</body>
+</html>
